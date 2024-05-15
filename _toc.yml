@@ -8,5 +8,6 @@ parts:
     numbered: True
     chapters:
     - file: src/Team13Solution/solution_of_team13_problem.ipynb
+    - file: src/Team7Solution/team7.ipynb
 
     
