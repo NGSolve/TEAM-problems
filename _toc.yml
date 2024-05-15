@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: the first few 
+    numbered: True
+    chapters:
+    - file: src/Team13Solution/solution_of_team13_problem.ipynb
+
+    
