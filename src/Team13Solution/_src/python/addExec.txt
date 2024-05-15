@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+
+#vertical middle
+plt.figure(1)
+plt.clf()
+xi = range(0, 25)
+plt.plot([7, 7], [0, 1.6], "--k")
+plt.plot([18, 18], [0, 1.6], "--k")
+plt.plot(xi, B_msm[0:25], 'o', label="measured")
+plt.plot(xi, B_sim[0:25], '*', label="calculated")
+plt.title("measured and calculated values")
+plt.ylabel("B")
+plt.xlabel("z/x/z - Position")
+plt.ylim(0, 1.6)
+plt.grid()
+
+
+
+plt.annotate("air gap",xy=(7, 1), arrowprops=dict(arrowstyle='->'), xytext=(10, 1.2))
+plt.annotate("corner",xy=(18, 0.2), arrowprops=dict(arrowstyle='->'), xytext=(15, 0.6))
+
+plt.legend(loc=0)
+plt.show(block=False)
+
+

@@ -1,0 +1,14 @@
+\BOOKMARK [1][-]{section.1}{Getting started}{}% 1
+\BOOKMARK [1][-]{section.2}{Problem Description}{}% 2
+\BOOKMARK [1][-]{section.3}{Coding}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Imports}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Setting Arguments}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Meshing}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Finite Element Space}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.5}{Material Parameters}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.6}{Stiffness Matrix and Dirichlet Boundaries}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.7}{Biot-Savart Field and Neumann Boundaries}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.8}{Solving the Problem}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.9}{Final Step}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Results}{}% 13
+\BOOKMARK [1][-]{section.5}{Related Work}{}% 14
