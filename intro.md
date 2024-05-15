@@ -1,7 +1,7 @@
 # Compumag TEAM-problems
 
 
-OLD OLD OLD TEXT 
+OLD OLD OLD OLD TEXT 
 
 
 [Joachim Schöberl](https://www.asc.tuwien.ac.at/~schoeberl)
