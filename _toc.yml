@@ -7,7 +7,7 @@ parts:
   - caption: the first few 
     numbered: True
     chapters:
-    - file: src/Team13Solution/solution_of_team13_problem.ipynb
-    - file: src/Team7Solution/team7.ipynb
+    - file: TEAM-7/team7.ipynb
+    - file: TEAM-13/solution_of_team13_problem.ipynb
 
     
