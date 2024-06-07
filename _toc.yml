@@ -9,5 +9,7 @@ parts:
     chapters:
     - file: TEAM-7/team7.ipynb
     - file: TEAM-13/solution_of_team13_problem.ipynb
+    - file: TEAM-24/team24.ipynb
+
 
     
