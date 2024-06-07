@@ -1,0 +1,1396 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Team 24 - Nonlinear Time-Transient Rotational Test Rig &#8212; Compumag TEAM-Problems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'TEAM-24/team24';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="2. TEAM Problem 13" href="../TEAM-13/solution_of_team13_problem.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Compumag TEAM-Problems</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Compumag TEAM-problems
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">the first few</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../TEAM-7/team7.html">1. TEAM-7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TEAM-13/solution_of_team13_problem.html">2. TEAM Problem 13</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Team 24 - Nonlinear Time-Transient Rotational Test Rig</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/NGSolve/TEAM-problems" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/TEAM-24/team24.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Team 24 - Nonlinear Time-Transient Rotational Test Rig</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Team 24 - Nonlinear Time-Transient Rotational Test Rig</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">3.1. Geometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesh">3.2. Mesh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-density">3.3. Current Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fespace">3.4. FESpace</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#material-parameters">4. Material Parameters</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="team-24-nonlinear-time-transient-rotational-test-rig">
+<h1><span class="section-number">3. </span>Team 24 - Nonlinear Time-Transient Rotational Test Rig<a class="headerlink" href="#team-24-nonlinear-time-transient-rotational-test-rig" title="Link to this heading">#</a></h1>
+<p>From: <a class="reference external" href="https://www.compumag.org/wp/wp-content/uploads/2018/06/problem24.pdf">https://www.compumag.org/wp/wp-content/uploads/2018/06/problem24.pdf</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">netgen.occ</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ngsolve</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ngsolve.webgui</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="geometry">
+<h2><span class="section-number">3.1. </span>Geometry<a class="headerlink" href="#geometry" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">symmetric</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">mm</span> <span class="o">=</span> <span class="mf">1e-3</span>
+
+<span class="n">r_outer</span> <span class="o">=</span> <span class="mi">209</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">r_inner</span> <span class="o">=</span> <span class="n">r_outer</span> <span class="o">-</span> <span class="mf">21.4</span><span class="o">*</span><span class="n">mm</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span>
+<span class="n">stator_ring</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">Z</span><span class="p">,</span><span class="n">r_outer</span><span class="p">,</span><span class="n">height</span><span class="p">)</span> <span class="o">-</span> <span class="n">Cylinder</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">Z</span><span class="p">,</span><span class="n">r_inner</span><span class="p">,</span><span class="n">height</span><span class="p">,</span> <span class="n">mantle</span><span class="o">=</span><span class="s2">&quot;cyl_inner&quot;</span><span class="p">)</span>
+<span class="n">stator_block</span> <span class="o">=</span> <span class="n">Box</span><span class="p">((</span><span class="o">-</span><span class="mf">27.8</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="o">-</span><span class="n">r_inner</span><span class="p">,</span> <span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">27.8</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="n">r_inner</span><span class="p">,</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Set &quot;helper&quot; facenames to easily find fillet edges later</span>
+<span class="n">stator_block</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">Min</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span>
+<span class="n">stator_block</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">Max</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span>
+<span class="n">stator_block</span> <span class="o">-=</span> <span class="n">Cylinder</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">Z</span><span class="p">,</span><span class="mf">107.5</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">stator</span> <span class="o">=</span> <span class="n">stator_ring</span> <span class="o">+</span> <span class="n">stator_block</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">stator</span><span class="o">.</span><span class="n">faces</span><span class="p">[</span><span class="s2">&quot;block&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">edges</span> <span class="o">*</span> <span class="n">stator</span><span class="o">.</span><span class="n">faces</span><span class="p">[</span><span class="s2">&quot;cyl_inner&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">edges</span>
+<span class="n">stator</span> <span class="o">=</span> <span class="n">stator</span><span class="o">.</span><span class="n">MakeFillet</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">mm</span><span class="p">)</span>
+
+<span class="c1"># Reset helper face names</span>
+<span class="n">stator</span><span class="o">.</span><span class="n">faces</span><span class="p">[</span><span class="s2">&quot;cyl_inner|block&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">stator</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">stator</span><span class="o">.</span><span class="n">solids</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;stator&quot;</span>
+
+<span class="n">r_inner</span> <span class="o">=</span> <span class="mf">50.8</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">r_outer</span> <span class="o">=</span> <span class="n">r_inner</span> <span class="o">+</span> <span class="mf">12.7</span><span class="o">*</span><span class="n">mm</span>
+<span class="n">rotor_ring</span> <span class="o">=</span> <span class="n">Cylinder</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">Z</span><span class="p">,</span><span class="n">r_outer</span><span class="p">,</span><span class="n">height</span><span class="p">,</span> <span class="n">mantle</span><span class="o">=</span><span class="s2">&quot;cyl_outer&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">Cylinder</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">Z</span><span class="p">,</span><span class="n">r_inner</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
+<span class="n">rotor_block</span> <span class="o">=</span> <span class="n">Box</span><span class="p">((</span><span class="o">-</span><span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">Cylinder</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">Z</span><span class="p">,</span><span class="mf">102.1</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">mantle</span><span class="o">=</span><span class="s2">&quot;rotor_end&quot;</span><span class="p">)</span>
+<span class="n">rotor_block</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">Min</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span>
+<span class="n">rotor_block</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">Max</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span>
+<span class="n">rotor_block</span> <span class="o">-=</span> <span class="n">Cylinder</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">Z</span><span class="p">,</span><span class="n">r_inner</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">rotor</span> <span class="o">=</span> <span class="n">rotor_ring</span> <span class="o">+</span> <span class="n">rotor_block</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">rotor</span><span class="o">.</span><span class="n">faces</span><span class="p">[</span><span class="s2">&quot;block&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">edges</span> <span class="o">*</span> <span class="n">rotor</span><span class="o">.</span><span class="n">faces</span><span class="p">[</span><span class="s2">&quot;cyl_outer&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">edges</span>
+<span class="n">rotor</span> <span class="o">=</span> <span class="n">rotor</span><span class="o">.</span><span class="n">MakeFillet</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">mm</span><span class="p">)</span>
+<span class="n">rotor</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.37</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">)</span>
+
+<span class="n">search_coil_y</span> <span class="o">=</span> <span class="n">rotor</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">Max</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">search_coil</span> <span class="o">=</span> <span class="n">Glue</span><span class="p">([</span><span class="n">Segment</span><span class="p">((</span><span class="o">-</span><span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">search_coil_y</span><span class="o">-</span><span class="mf">8.7</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">search_coil_y</span><span class="o">-</span><span class="mf">8.7</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span>
+                    <span class="n">Segment</span><span class="p">((</span><span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">search_coil_y</span><span class="o">-</span><span class="mf">8.7</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">search_coil_y</span><span class="o">-</span><span class="mf">8.7</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span>
+                    <span class="n">Segment</span><span class="p">((</span><span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">search_coil_y</span><span class="o">-</span><span class="mf">8.7</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">search_coil_y</span><span class="o">-</span><span class="mf">8.7</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span>
+                    <span class="n">Segment</span><span class="p">((</span><span class="o">-</span><span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">search_coil_y</span><span class="o">-</span><span class="mf">8.7</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">25.4</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">search_coil_y</span><span class="o">-</span><span class="mf">8.7</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="o">-</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">))])</span>
+<span class="n">search_coil</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;search_coil&quot;</span>
+<span class="n">search_coil</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">rotor</span> <span class="o">=</span> <span class="n">Glue</span><span class="p">([</span><span class="n">rotor</span><span class="p">,</span> <span class="n">search_coil</span><span class="p">])</span>
+<span class="n">rotor</span> <span class="o">=</span> <span class="n">rotor</span><span class="o">.</span><span class="n">Rotate</span><span class="p">(</span><span class="n">Axis</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">Z</span><span class="p">),</span> <span class="o">-</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">rotor</span><span class="o">.</span><span class="n">faces</span><span class="p">[</span><span class="s2">&quot;cyl_outer|block&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">rotor</span><span class="o">.</span><span class="n">solids</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;rotor&quot;</span>
+
+
+<span class="n">coil</span> <span class="o">=</span> <span class="n">Box</span><span class="p">((</span><span class="o">-</span><span class="mi">34</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">mm</span><span class="o">-</span><span class="mi">24</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="o">-</span><span class="mi">17</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="o">*</span><span class="n">mm</span><span class="o">-</span><span class="mi">31</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">34</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">mm</span><span class="o">+</span><span class="mi">24</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="mi">17</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">31</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">24</span><span class="o">*</span><span class="n">mm</span><span class="p">))</span>
+<span class="n">coil</span> <span class="o">-=</span> <span class="n">Box</span><span class="p">((</span><span class="o">-</span><span class="mi">34</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="o">-</span><span class="mi">17</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">31</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">34</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="mi">17</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">31</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">ListOfShapes</span><span class="p">([</span><span class="n">coil</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">Min</span><span class="p">(</span><span class="n">X</span><span class="o">+</span><span class="n">Z</span><span class="p">),</span><span class="n">coil</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">Max</span><span class="p">(</span><span class="n">X</span><span class="o">+</span><span class="n">Z</span><span class="p">),</span><span class="n">coil</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">Min</span><span class="p">(</span><span class="n">X</span><span class="o">-</span><span class="n">Z</span><span class="p">),</span><span class="n">coil</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">Max</span><span class="p">(</span><span class="n">X</span><span class="o">-</span><span class="n">Z</span><span class="p">)])</span>
+<span class="n">coil</span> <span class="o">=</span> <span class="n">coil</span><span class="o">.</span><span class="n">MakeFillet</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="mi">24</span><span class="o">*</span><span class="n">mm</span><span class="p">)</span>
+<span class="n">coil</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.72</span><span class="p">,</span><span class="mf">0.45</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">cut1</span> <span class="o">=</span> <span class="n">HalfSpace</span><span class="p">((</span><span class="o">-</span><span class="mi">34</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">cut2</span> <span class="o">=</span> <span class="n">HalfSpace</span><span class="p">((</span><span class="mi">34</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">cut1</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cut2</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">coil</span> <span class="o">*</span> <span class="n">cut1</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">coil</span> <span class="o">-</span> <span class="n">cut1</span>
+<span class="n">c2</span><span class="o">.</span><span class="n">solids</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;coil_mid&quot;</span>
+<span class="n">c1</span><span class="o">.</span><span class="n">solids</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;coil_left&quot;</span>
+<span class="n">coil</span> <span class="o">=</span> <span class="n">Glue</span><span class="p">([</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">])</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="n">coil</span> <span class="o">-</span> <span class="n">cut2</span>
+<span class="n">c3</span><span class="o">.</span><span class="n">solids</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;coil_right&quot;</span>
+<span class="n">coil</span> <span class="o">=</span> <span class="n">Glue</span><span class="p">([</span><span class="n">coil</span><span class="o">*</span><span class="n">cut2</span><span class="p">,</span> <span class="n">c3</span><span class="p">])</span>
+<span class="n">cut3</span> <span class="o">=</span> <span class="n">HalfSpace</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">31</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">Z</span><span class="p">)</span>
+<span class="n">cut4</span> <span class="o">=</span> <span class="n">HalfSpace</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">31</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">Z</span><span class="p">)</span>
+<span class="n">cut3</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cut4</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">c4</span> <span class="o">=</span> <span class="n">coil</span> <span class="o">*</span> <span class="n">cut3</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">c4</span><span class="o">.</span><span class="n">solids</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;_bottom&quot;</span>
+<span class="n">c5</span> <span class="o">=</span> <span class="n">coil</span> <span class="o">-</span> <span class="n">cut3</span>
+<span class="n">c6</span> <span class="o">=</span> <span class="n">c5</span> <span class="o">*</span> <span class="n">cut4</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">c6</span><span class="o">.</span><span class="n">solids</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;_mid&quot;</span>
+<span class="n">c7</span> <span class="o">=</span> <span class="n">c5</span> <span class="o">-</span> <span class="n">cut4</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">c7</span><span class="o">.</span><span class="n">solids</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;_top&quot;</span>
+<span class="n">coil</span> <span class="o">=</span> <span class="n">Glue</span><span class="p">([</span><span class="n">c4</span><span class="p">,</span> <span class="n">c6</span><span class="p">,</span> <span class="n">c7</span><span class="p">])</span>
+<span class="n">coil</span><span class="o">.</span><span class="n">solids</span><span class="o">.</span><span class="n">maxh</span><span class="o">=</span><span class="mf">0.01</span>
+
+<span class="n">coil1</span> <span class="o">=</span> <span class="n">coil</span><span class="o">.</span><span class="n">Move</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">63</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">coil1</span><span class="o">.</span><span class="n">solids</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;_1&quot;</span>
+<span class="n">coil2</span> <span class="o">=</span> <span class="n">coil</span><span class="o">.</span><span class="n">Move</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">63</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">coil2</span><span class="o">.</span><span class="n">solids</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;_2&quot;</span>
+
+<span class="n">airbox_size</span> <span class="o">=</span> <span class="mi">400</span><span class="o">*</span><span class="n">mm</span>
+<span class="n">airbox_height</span> <span class="o">=</span> <span class="mi">300</span><span class="o">*</span><span class="n">mm</span>
+<span class="n">air</span> <span class="o">=</span> <span class="n">Box</span><span class="p">((</span><span class="o">-</span><span class="n">airbox_size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">airbox_size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">airbox_height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">airbox_size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">airbox_size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">airbox_height</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">air</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;outer&quot;</span>
+<span class="n">air</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">air</span><span class="o">.</span><span class="n">solids</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;air&quot;</span>
+<span class="n">shape</span> <span class="o">=</span> <span class="n">Glue</span><span class="p">([</span><span class="n">stator</span><span class="p">,</span> <span class="n">rotor</span><span class="p">,</span> <span class="n">coil1</span><span class="p">,</span> <span class="n">coil2</span><span class="p">,</span> <span class="n">air</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="n">symmetric</span><span class="p">:</span>
+    <span class="n">sym</span> <span class="o">=</span> <span class="n">HalfSpace</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">sym</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;sym&quot;</span>
+    <span class="n">sym</span><span class="o">.</span><span class="n">faces</span><span class="o">.</span><span class="n">col</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">shape</span> <span class="o">*</span> <span class="n">sym</span>
+<span class="n">shape</span><span class="o">.</span><span class="n">WriteStep</span><span class="p">(</span><span class="s2">&quot;motor.step&quot;</span><span class="p">)</span>
+<span class="n">Draw</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">euler_angles</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "31e7f9b6491646b7a2cdd02ff7d70936"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BaseWebGuiScene
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mesh">
+<h2><span class="section-number">3.2. </span>Mesh<a class="headerlink" href="#mesh" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo</span> <span class="o">=</span> <span class="n">OCCGeometry</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">pole_end</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0139</span><span class="p">,</span> <span class="mf">0.0519216</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0127</span><span class="p">)</span>
+<span class="n">shift</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">6.5e-3</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3e-3</span><span class="p">,</span> <span class="mf">7.7e-3</span><span class="p">)</span>
+<span class="n">hall_point</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="n">s</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pole_end</span><span class="p">,</span> <span class="n">shift</span><span class="p">))</span>
+<span class="n">mp</span> <span class="o">=</span> <span class="n">meshsize</span><span class="o">.</span><span class="n">moderate</span>
+<span class="n">mp</span><span class="o">.</span><span class="n">RestrictH</span><span class="p">(</span><span class="o">*</span><span class="n">hall_point</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">GenerateMesh</span><span class="p">(</span><span class="n">mp</span><span class="p">,</span> <span class="n">closeedgefac</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">maxh</span><span class="o">=</span><span class="mf">0.02</span><span class="p">))</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of elements:&quot;</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">ne</span><span class="p">)</span>
+<span class="n">Draw</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">euler_angles</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">clipping</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;z&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;dist&quot;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of elements: 31053
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "94c2e23c51ba4f419b1955ebcb2fb9f7"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BaseWebGuiScene
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="current-density">
+<h2><span class="section-number">3.3. </span>Current Density<a class="headerlink" href="#current-density" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coilrect_xmin</span><span class="p">,</span> <span class="n">coilrect_xmax</span> <span class="o">=</span> <span class="o">-</span><span class="mi">34</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">34</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">coilrect_zmin</span><span class="p">,</span> <span class="n">coilrect_zmax</span> <span class="o">=</span> <span class="o">-</span><span class="mi">31</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">31</span><span class="o">*</span><span class="n">mm</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="n">Jtau</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">MaterialCF</span><span class="p">({</span> <span class="s2">&quot;coil_left_bottom.*&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="n">coilrect_zmin</span><span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">coilrect_xmin</span><span class="p">),</span>
+                        <span class="s2">&quot;coil_mid_bottom.*&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+                        <span class="s2">&quot;coil_right_bottom.*&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="n">coilrect_zmin</span><span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">coilrect_xmax</span><span class="p">),</span>
+                        <span class="s2">&quot;coil_right_mid.*&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+                        <span class="s2">&quot;coil_left_mid.*&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+                        <span class="s2">&quot;coil_left_top.*&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="n">coilrect_zmax</span><span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">coilrect_xmin</span><span class="p">),</span>
+                        <span class="s2">&quot;coil_mid_top.*&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+                        <span class="s2">&quot;coil_right_top.*&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="n">coilrect_zmax</span><span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">coilrect_xmax</span><span class="p">)},</span>
+                       <span class="n">default</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">J_coil</span> <span class="o">=</span> <span class="n">Jtau</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="n">Norm</span><span class="p">(</span><span class="n">Jtau</span><span class="p">)</span>
+<span class="n">Draw</span><span class="p">(</span><span class="n">J_coil</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">clipping</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pnt&quot;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">63</span><span class="o">*</span><span class="n">mm</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;vec&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)},</span> <span class="n">euler_angles</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span> <span class="n">draw_surf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vectors</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;grid_size&quot;</span><span class="p">:</span><span class="mi">400</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "404a6a22aea6490a9a522562de539c23"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BaseWebGuiScene
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fespace">
+<h2><span class="section-number">3.4. </span>FESpace<a class="headerlink" href="#fespace" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graddoms</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">mat</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;stator&quot;</span><span class="p">,</span> <span class="s2">&quot;rotor&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">mat</span> <span class="ow">in</span> <span class="n">mesh</span><span class="o">.</span><span class="n">GetMaterials</span><span class="p">()</span> <span class="p">]</span>
+<span class="n">order</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">hcurl</span> <span class="o">=</span> <span class="n">HCurl</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">dirichlet</span><span class="o">=</span><span class="s2">&quot;sym&quot;</span><span class="p">,</span> <span class="n">gradientdomains</span><span class="o">=</span><span class="n">graddoms</span><span class="p">)</span>
+<span class="n">number</span> <span class="o">=</span> <span class="n">NumberSpace</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">definedon</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">Materials</span><span class="p">(</span><span class="s2">&quot;coil.*&quot;</span><span class="p">))</span>
+<span class="n">fes</span> <span class="o">=</span> <span class="n">hcurl</span> <span class="o">*</span> <span class="n">number</span>
+<span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">I</span><span class="p">),</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">It</span><span class="p">)</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="material-parameters">
+<h1><span class="section-number">4. </span>Material Parameters<a class="headerlink" href="#material-parameters" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu0</span> <span class="o">=</span> <span class="mf">1.257e-6</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.413</span><span class="p">,</span> <span class="mf">1.594</span><span class="p">,</span> <span class="mf">1.751</span><span class="p">,</span> <span class="mf">1.839</span><span class="p">,</span> <span class="mf">1.896</span><span class="p">,</span> <span class="mf">1.936</span><span class="p">,</span> <span class="mf">1.967</span><span class="p">,</span> <span class="mf">2.008</span><span class="p">,</span> <span class="mf">2.042</span><span class="p">,</span> <span class="mf">2.073</span><span class="p">,</span> <span class="mf">2.101</span><span class="p">,</span> <span class="mf">2.127</span><span class="p">,</span> <span class="mf">2.151</span><span class="p">,</span> <span class="mf">2.197</span><span class="p">,</span> <span class="mf">2.240</span><span class="p">,</span> <span class="mf">2.281</span><span class="p">,</span> <span class="mf">2.321</span><span class="p">,</span> <span class="mf">2.361</span><span class="p">,</span> <span class="mf">2.400</span><span class="p">,</span> <span class="mf">2.472</span><span class="p">]</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">00.400</span><span class="p">,</span> <span class="mf">00.801</span><span class="p">,</span> <span class="mf">01.601</span><span class="p">,</span> <span class="mf">02.402</span><span class="p">,</span> <span class="mf">03.203</span><span class="p">,</span> <span class="mf">04.003</span><span class="p">,</span> <span class="mf">04.804</span><span class="p">,</span> <span class="mf">06.405</span><span class="p">,</span> <span class="mf">08.007</span><span class="p">,</span> <span class="mf">09.608</span><span class="p">,</span> <span class="mf">11.210</span><span class="p">,</span> <span class="mf">12.811</span><span class="p">,</span> <span class="mf">14.412</span><span class="p">,</span> <span class="mf">17.615</span><span class="p">,</span> <span class="mf">20.818</span><span class="p">,</span> <span class="mf">24.020</span><span class="p">,</span> <span class="mf">27.223</span><span class="p">,</span> <span class="mf">30.426</span><span class="p">,</span> <span class="mf">33.629</span><span class="p">,</span> <span class="mf">39.634</span><span class="p">]</span>
+<span class="c1"># extend data by high value</span>
+<span class="n">H</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1e4</span><span class="o">*</span><span class="n">hi</span> <span class="k">for</span> <span class="n">hi</span> <span class="ow">in</span> <span class="n">h</span><span class="p">]</span>
+<span class="n">H</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">H</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">B</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="mi">1000</span><span class="o">-</span><span class="n">B</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">B</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">bh</span> <span class="o">=</span> <span class="n">BSpline</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1"># test evaluation of bspline</span>
+<span class="n">bvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">bh</span><span class="p">(</span><span class="n">bi</span><span class="p">)</span> <span class="k">for</span> <span class="n">bi</span> <span class="ow">in</span> <span class="n">bvals</span><span class="p">],</span> <span class="n">bvals</span><span class="p">)</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">curl</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="n">normB</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">B</span> <span class="o">*</span> <span class="n">B</span> <span class="o">+</span> <span class="mf">1e-20</span><span class="p">)</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">MaterialCF</span><span class="p">(</span> <span class="p">{</span> <span class="s2">&quot;rotor|stator&quot;</span> <span class="p">:</span> <span class="n">bh</span><span class="p">(</span><span class="n">normB</span><span class="p">)</span><span class="o">/</span><span class="n">normB</span> <span class="p">},</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">mu0</span><span class="p">)</span>
+
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">MaterialCF</span><span class="p">(</span> <span class="p">{</span><span class="s2">&quot;stator|rotor&quot;</span> <span class="p">:</span> <span class="mf">4.54e5</span> <span class="p">},</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">350</span> <span class="c1"># number of turns</span>
+<span class="n">S</span> <span class="o">=</span> <span class="mi">24</span><span class="o">*</span><span class="mi">17</span><span class="o">*</span><span class="n">mm</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># coil cross-section</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/dbe737a317826a0960e1463ae55b19bd242927990984e1a3348e2c22b3f2cb0c.png" src="../_images/dbe737a317826a0960e1463ae55b19bd242927990984e1a3348e2c22b3f2cb0c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tau</span> <span class="o">=</span> <span class="mf">0.005</span>
+<span class="n">uold</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">hcurl</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="n">nu</span> <span class="o">*</span> <span class="p">(</span><span class="n">curl</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="n">curl</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-6</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="n">sigma</span><span class="o">/</span><span class="n">tau</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="o">-</span><span class="n">uold</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dx</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="o">-</span><span class="n">N</span><span class="o">/</span><span class="n">S</span> <span class="o">*</span> <span class="n">I</span> <span class="o">*</span> <span class="n">J_coil</span> <span class="o">*</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dx</span><span class="p">(</span><span class="s2">&quot;coil.*&quot;</span><span class="p">,</span> <span class="n">bonus_intorder</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+
+<span class="n">voldom</span> <span class="o">=</span> <span class="n">Integrate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">Materials</span><span class="p">(</span><span class="s2">&quot;coil.*&quot;</span><span class="p">))</span>
+<span class="c1"># actually \int E = \int (u-uold)/tau must be multiplied by 2</span>
+<span class="c1"># multiplying the voldom is the same and keeps symmetry</span>
+<span class="k">if</span> <span class="n">symmetric</span><span class="p">:</span>
+    <span class="n">voldom</span> <span class="o">*=</span> <span class="mi">2</span> <span class="c1"># for symmetry</span>
+
+<span class="n">U</span> <span class="o">=</span> <span class="mf">23.1</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">3.09</span> <span class="c1"># Ohm</span>
+
+<span class="n">a</span> <span class="o">+=</span> <span class="n">tau</span><span class="o">/</span><span class="n">voldom</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="o">*</span><span class="n">I</span><span class="o">-</span><span class="n">U</span><span class="p">)</span> <span class="o">*</span> <span class="n">It</span> <span class="o">*</span> <span class="n">dx</span><span class="p">(</span><span class="s2">&quot;coil.*&quot;</span><span class="p">,</span> <span class="n">bonus_intorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="o">-</span> <span class="n">N</span><span class="o">/</span><span class="n">S</span> <span class="o">*</span> <span class="n">J_coil</span> <span class="o">*</span> <span class="p">(</span><span class="n">u</span><span class="o">-</span><span class="n">uold</span><span class="p">)</span> <span class="o">*</span> <span class="n">It</span> <span class="o">*</span> <span class="n">dx</span><span class="p">(</span><span class="s2">&quot;coil.*&quot;</span><span class="p">,</span> <span class="n">bonus_intorder</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Preconditioner</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;bddc&quot;</span><span class="p">,</span> <span class="n">inverse</span><span class="o">=</span><span class="s2">&quot;sparsecholesky&quot;</span><span class="p">)</span>
+<span class="c1"># c = Preconditioner(a, type=&quot;direct&quot;, inverse=&quot;pardiso&quot;)</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="n">uprime</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">hcurl</span><span class="p">)</span>
+
+<span class="n">uold</span><span class="o">.</span><span class="n">vec</span><span class="p">[:]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">vec</span><span class="o">.</span><span class="n">CreateVector</span><span class="p">()</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">vec</span><span class="o">.</span><span class="n">CreateVector</span><span class="p">()</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">By_vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">I_vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">rotor_flux</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">torque</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+<span class="n">measured_t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.002</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.010</span><span class="p">,</span> <span class="mf">0.015</span><span class="p">,</span> <span class="mf">0.020</span><span class="p">,</span>
+              <span class="mf">0.030</span><span class="p">,</span> <span class="mf">0.040</span><span class="p">,</span> <span class="mf">0.050</span><span class="p">,</span> <span class="mf">0.060</span><span class="p">,</span> <span class="mf">0.070</span><span class="p">,</span> <span class="mf">0.080</span><span class="p">,</span>
+              <span class="mf">0.090</span><span class="p">,</span> <span class="mf">0.100</span><span class="p">,</span> <span class="mf">0.120</span><span class="p">,</span> <span class="mf">0.140</span><span class="p">,</span> <span class="mf">0.160</span><span class="p">,</span> <span class="mf">0.180</span><span class="p">,</span>
+              <span class="mf">0.200</span><span class="p">,</span> <span class="mf">0.240</span><span class="p">,</span> <span class="mf">0.300</span><span class="p">]</span>
+<span class="n">measured_By</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.53</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.94</span><span class="p">,</span> <span class="mf">1.03</span><span class="p">,</span>
+               <span class="mf">1.09</span><span class="p">,</span> <span class="mf">1.14</span><span class="p">,</span> <span class="mf">1.17</span><span class="p">,</span> <span class="mf">1.19</span><span class="p">,</span> <span class="mf">1.21</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">,</span> <span class="mf">1.24</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span>
+               <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.26</span><span class="p">,</span> <span class="mf">1.26</span><span class="p">]</span>
+<span class="n">measured_I</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">1.80</span><span class="p">,</span> <span class="mf">2.95</span><span class="p">,</span> <span class="mf">3.82</span><span class="p">,</span> <span class="mf">4.49</span><span class="p">,</span> <span class="mf">5.45</span><span class="p">,</span> <span class="mf">6.05</span><span class="p">,</span> <span class="mf">6.45</span><span class="p">,</span>
+              <span class="mf">6.71</span><span class="p">,</span> <span class="mf">6.91</span><span class="p">,</span> <span class="mf">7.04</span><span class="p">,</span> <span class="mf">7.15</span><span class="p">,</span> <span class="mf">7.22</span><span class="p">,</span> <span class="mf">7.31</span><span class="p">,</span> <span class="mf">7.36</span><span class="p">,</span> <span class="mf">7.38</span><span class="p">,</span> <span class="mf">7.40</span><span class="p">,</span>
+              <span class="mf">7.40</span><span class="p">,</span> <span class="mf">7.41</span><span class="p">,</span> <span class="mf">7.41</span><span class="p">]</span>
+<span class="n">measured_rotor_flux</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.29</span><span class="p">,</span> <span class="mf">0.77</span><span class="p">,</span> <span class="mf">1.44</span><span class="p">,</span> <span class="mf">1.99</span><span class="p">,</span> <span class="mf">2.44</span><span class="p">,</span> <span class="mf">3.11</span><span class="p">,</span> <span class="mf">3.58</span><span class="p">,</span> <span class="mf">3.91</span><span class="p">,</span> <span class="mf">4.14</span><span class="p">,</span> <span class="mf">4.31</span><span class="p">,</span> <span class="mf">4.43</span><span class="p">,</span> <span class="mf">4.52</span><span class="p">,</span> <span class="mf">4.58</span><span class="p">,</span> <span class="mf">4.65</span><span class="p">,</span> <span class="mf">4.69</span><span class="p">,</span> <span class="mf">4.71</span><span class="p">,</span> <span class="mf">4.72</span><span class="p">,</span> <span class="mf">4.72</span><span class="p">,</span> <span class="mf">4.72</span><span class="p">,</span> <span class="mf">4.72</span><span class="p">]</span>
+<span class="n">measured_rotor_flux</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1e-4</span><span class="o">*</span><span class="n">val</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">measured_rotor_flux</span><span class="p">]</span>
+<span class="n">measured_torque</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.17</span><span class="p">,</span> <span class="mf">0.39</span><span class="p">,</span> <span class="mf">0.68</span><span class="p">,</span> <span class="mf">0.96</span><span class="p">,</span> <span class="mf">1.48</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">2.24</span><span class="p">,</span> <span class="mf">2.48</span><span class="p">,</span> <span class="mf">2.68</span><span class="p">,</span> <span class="mf">2.82</span><span class="p">,</span> <span class="mf">2.93</span><span class="p">,</span> <span class="mf">3.02</span><span class="p">,</span> <span class="mf">3.11</span><span class="p">,</span> <span class="mf">3.17</span><span class="p">,</span> <span class="mf">3.19</span><span class="p">,</span> <span class="mf">3.21</span><span class="p">,</span> <span class="mf">3.22</span><span class="p">,</span> <span class="mf">3.22</span><span class="p">,</span> <span class="mf">3.22</span><span class="p">]</span>
+
+
+<span class="n">scene</span> <span class="o">=</span> <span class="n">Draw</span><span class="p">(</span><span class="n">curl</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">components</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">draw_surf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">clipping</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pnt&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">mm</span><span class="p">),</span> <span class="s2">&quot;vec&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)},</span> <span class="n">vectors</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;grid_size&quot;</span><span class="p">:</span><span class="mi">300</span><span class="p">})</span>
+<span class="n">scene_J</span> <span class="o">=</span> <span class="n">Draw</span><span class="p">(</span><span class="n">sigma</span><span class="o">*</span><span class="n">uprime</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">draw_surf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">clipping</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pnt&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">mm</span><span class="p">),</span><span class="s2">&quot;vec&quot;</span> <span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)},</span> <span class="n">vectors</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;grid_size&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "d0522b1b089e4187ac9ac26a48acc55c"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "98e4f41d104d43f9802af5889eea38b1"}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ngsolve.nonlinearsolvers</span> <span class="kn">import</span> <span class="n">NewtonSolver</span>
+<span class="kn">from</span> <span class="nn">ngsolve.krylovspace</span> <span class="kn">import</span> <span class="n">CGSolver</span>
+<span class="n">tend</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">hall_probe</span> <span class="o">=</span> <span class="n">mesh</span><span class="p">(</span><span class="o">*</span><span class="n">hall_point</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># relative error</span>
+<span class="n">plot_by</span><span class="p">,</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">By_vals</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;computed&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">measured_t</span><span class="p">,</span> <span class="n">measured_By</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;measured&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;By at hall probe&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plot_i</span><span class="p">,</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">I_vals</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;computed&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">measured_t</span><span class="p">,</span> <span class="n">measured_I</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;measured&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plot_flux</span><span class="p">,</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">rotor_flux</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;computed&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">measured_t</span><span class="p">,</span> <span class="n">measured_rotor_flux</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;measured&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Rotor flux&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plot_torque</span><span class="p">,</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">torque</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;computed&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">measured_t</span><span class="p">,</span> <span class="n">measured_torque</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;measured&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Rotor torque&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ioff</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">TaskManager</span><span class="p">():</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">AssembleLinearization</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">vec</span><span class="p">)</span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">CGSolver</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">mat</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">printrates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">newton</span> <span class="o">=</span> <span class="n">NewtonSolver</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="n">solver</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">tend</span><span class="p">:</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">tau</span>
+        <span class="n">uold</span><span class="o">.</span><span class="n">vec</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">components</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">vec</span>
+        <span class="n">newton</span><span class="o">.</span><span class="n">Solve</span><span class="p">(</span><span class="n">maxerr</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span> <span class="n">printing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">uprime</span><span class="o">.</span><span class="n">vec</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">tau</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">components</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">vec</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">tau</span> <span class="o">*</span> <span class="n">uold</span><span class="o">.</span><span class="n">vec</span>
+        <span class="n">times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="n">curl</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">components</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="n">hall_probe</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">I</span> <span class="o">=</span> <span class="o">-</span><span class="n">u</span><span class="o">.</span><span class="n">components</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">flux_rotor</span> <span class="o">=</span> <span class="n">Integrate</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">components</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">specialcf</span><span class="o">.</span><span class="n">tangential</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">definedon</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">BBoundaries</span><span class="p">(</span><span class="s2">&quot;search_coil&quot;</span><span class="p">))</span>
+        <span class="n">B_vol</span> <span class="o">=</span> <span class="n">BoundaryFromVolumeCF</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">MaterialCF</span><span class="p">({</span><span class="s2">&quot;air&quot;</span><span class="p">:</span> <span class="n">B</span><span class="p">}))</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">specialcf</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">Materials</span><span class="p">(</span><span class="s2">&quot;rotor&quot;</span><span class="p">))</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="n">CF</span><span class="p">((</span><span class="o">-</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+        <span class="n">maxwell_stress</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">mu0</span> <span class="o">*</span> <span class="p">(</span><span class="n">OuterProduct</span><span class="p">(</span><span class="n">B_vol</span><span class="p">,</span> <span class="n">B_vol</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">B_vol</span> <span class="o">*</span> <span class="n">B_vol</span><span class="p">)</span> <span class="o">*</span> <span class="n">Id</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+        <span class="n">torq</span> <span class="o">=</span> <span class="n">Integrate</span><span class="p">(</span><span class="n">maxwell_stress</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="n">rotation</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">definedon</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">Materials</span><span class="p">(</span><span class="s2">&quot;rotor&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Boundaries</span><span class="p">()</span> <span class="o">*</span> <span class="n">mesh</span><span class="o">.</span><span class="n">Materials</span><span class="p">(</span><span class="s2">&quot;air&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Boundaries</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">symmetric</span><span class="p">:</span>
+            <span class="n">flux_rotor</span> <span class="o">*=</span> <span class="mi">2</span>
+            <span class="n">torq</span> <span class="o">*=</span> <span class="mi">2</span>
+        <span class="n">torque</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torq</span><span class="p">)</span>
+        <span class="n">rotor_flux</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flux_rotor</span><span class="p">)</span>
+        <span class="n">By_vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">by</span><span class="p">)</span>
+        <span class="n">I_vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+        <span class="n">plot_by</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">By_vals</span><span class="p">)</span>
+        <span class="n">plot_i</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">I_vals</span><span class="p">)</span>
+        <span class="n">plot_flux</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">rotor_flux</span><span class="p">)</span>
+        <span class="n">plot_torque</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">torque</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">plot</span> <span class="ow">in</span> <span class="p">(</span><span class="n">plot_by</span><span class="p">,</span> <span class="n">plot_i</span><span class="p">,</span> <span class="n">plot_flux</span><span class="p">,</span> <span class="n">plot_torque</span><span class="p">):</span>
+            <span class="n">plot</span><span class="o">.</span><span class="n">set_xdata</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">relim</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t = &quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;By = &quot;</span><span class="p">,</span> <span class="n">by</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I = &quot;</span><span class="p">,</span> <span class="n">I</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rotor flux = &quot;</span><span class="p">,</span> <span class="n">flux_rotor</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;torque: &quot;</span><span class="p">,</span> <span class="n">torque</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+        <span class="n">scene</span><span class="o">.</span><span class="n">Redraw</span><span class="p">()</span>
+        <span class="n">scene_J</span><span class="o">.</span><span class="n">Redraw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e8b66eb6950f3053b5fdd1ba6d6fc5b8a0e969743ecf1adf15568857ab89b3da.png" src="../_images/e8b66eb6950f3053b5fdd1ba6d6fc5b8a0e969743ecf1adf15568857ab89b3da.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Newton iteration  0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 1.0033730216340018e-05     
+CG iteration 2, residual = 2.9113383406270983e-05     
+CG iteration 3, residual = 9.207242739098016e-05     
+CG iteration 4, residual = 0.0002276977238028494     
+CG iteration 5, residual = 0.0005837816114596143     
+CG iteration 6, residual = 0.0009896221828576564     
+CG iteration 7, residual = 0.0020174270769784015     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 0.0018674122645929098     
+CG iteration 9, residual = 0.0037412155100474635     
+CG iteration 10, residual = 0.006297147197627464     
+CG iteration 11, residual = 0.006872635222157131     
+CG iteration 12, residual = 0.013468133831475172     
+CG iteration 13, residual = 0.02018148427252735     
+CG iteration 14, residual = 0.021839484368737616     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 0.03789535428825964     
+CG iteration 16, residual = 0.0608129635413833     
+CG iteration 17, residual = 0.07186860075073098     
+CG iteration 18, residual = 0.12156481477310262     
+CG iteration 19, residual = 0.213591447601427     
+CG iteration 20, residual = 0.3197399719843481     
+CG iteration 21, residual = 0.6326055043606414     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 22, residual = 19.76927003491098     
+CG iteration 23, residual = 0.5038510685235037     
+CG iteration 24, residual = 0.24657235592598253     
+CG iteration 25, residual = 0.1712387593305918     
+CG iteration 26, residual = 0.10744833859849977     
+CG iteration 27, residual = 0.06901582007926539     
+CG iteration 28, residual = 0.052652113107658195     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 29, residual = 0.03649634529459443     
+CG iteration 30, residual = 0.021079967832345014     
+CG iteration 31, residual = 0.015584939918939632     
+CG iteration 32, residual = 0.0125976017868238     
+CG iteration 33, residual = 0.007545048010206783     
+CG iteration 34, residual = 0.004882005095500513     
+CG iteration 35, residual = 0.0039602266989202115     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 36, residual = 0.002986968863059222     
+CG iteration 37, residual = 0.001815685586314774     
+CG iteration 38, residual = 0.0012158901908873453     
+CG iteration 39, residual = 0.000933126564019645     
+CG iteration 40, residual = 0.0006463752468742743     
+CG iteration 41, residual = 0.0003836153932970038     
+CG iteration 42, residual = 0.00027078401503498616     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 43, residual = 0.0002016025943629705     
+CG iteration 44, residual = 0.0001372880139777126     
+CG iteration 45, residual = 9.149869632456741e-05     
+CG iteration 46, residual = 6.822915384116236e-05     
+CG iteration 47, residual = 4.985529188732596e-05     
+CG iteration 48, residual = 3.10871158216198e-05     
+CG iteration 49, residual = 2.1978064252144924e-05     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 50, residual = 1.762559579773336e-05     
+CG iteration 51, residual = 1.190457295560125e-05     
+CG iteration 52, residual = 7.302781438497971e-06     
+CG iteration 53, residual = 5.274505714234131e-06     
+CG iteration 54, residual = 4.049565973200151e-06     
+CG iteration 55, residual = 2.730870384021882e-06     
+CG iteration 56, residual = 1.7060819124831619e-06     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 57, residual = 1.2041553677932858e-06     
+CG iteration 58, residual = 8.943277256397836e-07     
+CG iteration 59, residual = 5.738437582756126e-07     
+CG iteration 60, residual = 3.369041081433188e-07     
+CG iteration 61, residual = 2.1246020152824003e-07     
+CG iteration 62, residual = 8.788581012834996e-08     
+CG iteration 63, residual = 5.658951381679573e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 64, residual = 1.2035028866984634e-07     
+CG iteration 65, residual = 2.895858495869832e-07     
+CG iteration 66, residual = 4.5399458111901183e-07     
+CG iteration 67, residual = 6.64245340077975e-07     
+CG iteration 68, residual = 9.726996912254006e-07     
+CG iteration 69, residual = 1.4731853986845207e-06     
+CG iteration 70, residual = 2.066822401488278e-06     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 71, residual = 2.831673921979233e-06     
+CG iteration 72, residual = 4.1993739090964865e-06     
+CG iteration 73, residual = 6.460360259869747e-06     
+CG iteration 74, residual = 8.863774530677543e-06     
+CG iteration 75, residual = 1.2137883805836414e-05     
+CG iteration 76, residual = 1.8049332058475276e-05     
+CG iteration 77, residual = 2.663353047152181e-05     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 78, residual = 3.594383138506637e-05     
+CG iteration 79, residual = 5.3895687990101295e-05     
+CG iteration 80, residual = 8.035152924738582e-05     
+CG iteration 81, residual = 0.00011109291356696538     
+CG iteration 82, residual = 0.00015448912099329292     
+CG iteration 83, residual = 0.00022687678553300565     
+CG iteration 84, residual = 0.0003474207879398271     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 85, residual = 0.00048049274864344396     
+CG iteration 86, residual = 0.0006710172966845329     
+CG iteration 87, residual = 0.0009532117534913094     
+CG iteration 88, residual = 0.0014444822411927105     
+CG iteration 89, residual = 0.0023638755478155343     
+CG iteration 90, residual = 0.0037542607740001176     
+CG iteration 91, residual = 0.008016967504261067     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 92, residual = 0.08854223890324613     
+CG iteration 93, residual = 0.00647742225973413     
+CG iteration 94, residual = 0.0031964515030929548     
+CG iteration 95, residual = 0.002083050707511892     
+CG iteration 96, residual = 0.0013547738072569983     
+CG iteration 97, residual = 0.0008845214158714408     
+CG iteration 98, residual = 0.0006203559176888815     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 99, residual = 0.00044836941073735244     
+CG iteration 100, residual = 0.0003128224733455879     
+CG iteration 101, residual = 0.00021628704246247707     
+CG iteration 102, residual = 0.00014926181004592948     
+CG iteration 103, residual = 0.00010544135017997835     
+CG iteration 104, residual = 7.43254074521306e-05     
+CG iteration 105, residual = 4.8777072815879605e-05     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 106, residual = 3.402261761433778e-05     
+CG iteration 107, residual = 2.381444197379069e-05     
+CG iteration 108, residual = 1.677956744704461e-05     
+CG iteration 109, residual = 1.1516065048689674e-05     
+CG iteration 110, residual = 8.335233087613786e-06     
+CG iteration 111, residual = 5.875827792740815e-06     
+CG iteration 112, residual = 3.884918044281435e-06     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 113, residual = 2.5952411359364025e-06     
+CG iteration 114, residual = 1.959910953681966e-06     
+CG iteration 115, residual = 1.3837581475062668e-06     
+CG iteration 116, residual = 9.285941920065291e-07     
+CG iteration 117, residual = 6.528215141815394e-07     
+CG iteration 118, residual = 4.777934405348951e-07     
+CG iteration 119, residual = 3.2566392478424733e-07     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 120, residual = 2.233045049549544e-07     
+CG iteration 121, residual = 1.5889842713270218e-07     
+CG iteration 122, residual = 1.124520544322379e-07     
+CG iteration 123, residual = 7.824086322065637e-08     
+CG iteration 124, residual = 5.199596034364604e-08     
+CG iteration 125, residual = 3.617388234734759e-08     
+CG iteration 126, residual = 2.6101291288522193e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 127, residual = 1.8101280827981156e-08     
+CG iteration 128, residual = 1.171329867888529e-08     
+CG iteration 129, residual = 8.071984074469272e-09     
+CG iteration 130, residual = 5.889365602127789e-09     
+CG iteration 131, residual = 4.464217187009874e-09     
+CG iteration 132, residual = 2.918015363149176e-09     
+CG iteration 133, residual = 1.95285063940423e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 134, residual = 1.4792282194016175e-09     
+CG iteration 135, residual = 1.0106520039034153e-09     
+CG iteration 136, residual = 6.934799651459299e-10     
+err =  0.1959017687725624
+Newton iteration  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 0.00018539106005056887     
+CG iteration 2, residual = 6.362889132906258e-05     
+CG iteration 3, residual = 2.539111592160996e-05     
+CG iteration 4, residual = 2.144453350176341e-05     
+CG iteration 5, residual = 1.3283730803439929e-05     
+CG iteration 6, residual = 1.3098664202748258e-05     
+CG iteration 7, residual = 5.4264153623513585e-06     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 4.558115849863627e-06     
+CG iteration 9, residual = 3.456813757613374e-06     
+CG iteration 10, residual = 1.6732957170491997e-06     
+CG iteration 11, residual = 1.4380953023383492e-06     
+CG iteration 12, residual = 1.1139648588369184e-06     
+CG iteration 13, residual = 6.459625526765205e-07     
+CG iteration 14, residual = 4.5806878223194986e-07     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 3.7348731841908395e-07     
+CG iteration 16, residual = 2.5001836319662123e-07     
+CG iteration 17, residual = 1.4236240084582705e-07     
+CG iteration 18, residual = 1.1079861404957226e-07     
+CG iteration 19, residual = 9.120835930541477e-08     
+CG iteration 20, residual = 4.8932241561425566e-08     
+CG iteration 21, residual = 3.2558023046340984e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 22, residual = 2.815181526146051e-08     
+CG iteration 23, residual = 1.5901367121210606e-08     
+err =  0.00016552714309493773
+Newton iteration  2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 4.33106686227611e-06     
+CG iteration 2, residual = 7.346079323969963e-07     
+CG iteration 3, residual = 1.3527803745254827e-06     
+CG iteration 4, residual = 4.225687482830048e-07     
+CG iteration 5, residual = 1.7500737064911427e-07     
+CG iteration 6, residual = 1.5079109175424126e-07     
+CG iteration 7, residual = 1.5823633118617395e-07     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 8.7946885972807e-08     
+CG iteration 9, residual = 4.812608125704868e-08     
+CG iteration 10, residual = 3.613890452185624e-08     
+CG iteration 11, residual = 2.447317888375469e-08     
+CG iteration 12, residual = 1.522360271048647e-08     
+CG iteration 13, residual = 1.2552014767060623e-08     
+CG iteration 14, residual = 1.0934654368956524e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 7.364204911472309e-09     
+CG iteration 16, residual = 4.273168387932267e-09     
+CG iteration 17, residual = 2.4540589191398284e-09     
+CG iteration 18, residual = 1.8225394009003909e-09     
+CG iteration 19, residual = 1.242251061956253e-09     
+CG iteration 20, residual = 8.6683176353904e-10     
+CG iteration 21, residual = 7.079981198873757e-10     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 22, residual = 4.4052173776197894e-10     
+CG iteration 23, residual = 2.9928694161795796e-10     
+err =  3.902003413328879e-06
+Newton iteration  3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 3.7856741115538683e-06     
+CG iteration 2, residual = 6.006531557119884e-07     
+CG iteration 3, residual = 1.3453354881075488e-07     
+CG iteration 4, residual = 1.5357541325483276e-07     
+CG iteration 5, residual = 1.4332379512815642e-07     
+CG iteration 6, residual = 3.6495067782893914e-08     
+CG iteration 7, residual = 2.0106702216701207e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 2.566171628437326e-08     
+CG iteration 9, residual = 1.9248633884946547e-08     
+CG iteration 10, residual = 8.541741781586091e-09     
+CG iteration 11, residual = 3.76963574772782e-09     
+CG iteration 12, residual = 2.6018099722138883e-09     
+CG iteration 13, residual = 2.2908638919177337e-09     
+CG iteration 14, residual = 2.1825616942478734e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 1.3389196389685784e-09     
+CG iteration 16, residual = 7.235006928071597e-10     
+CG iteration 17, residual = 3.709599107545348e-10     
+err =  3.3601691734354854e-06
+Newton iteration  4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 3.5548593053449437e-06     
+CG iteration 2, residual = 5.595158229054401e-07     
+CG iteration 3, residual = 1.4440242698557652e-07     
+CG iteration 4, residual = 1.5954066307301173e-07     
+CG iteration 5, residual = 1.5358954511415654e-07     
+CG iteration 6, residual = 4.4383985188038655e-08     
+CG iteration 7, residual = 2.1903978124990026e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 2.5825005759437296e-08     
+CG iteration 9, residual = 2.3701834825753404e-08     
+CG iteration 10, residual = 1.1144801519600319e-08     
+CG iteration 11, residual = 4.114758264699123e-09     
+CG iteration 12, residual = 2.9827977632777433e-09     
+CG iteration 13, residual = 2.6616155835690258e-09     
+CG iteration 14, residual = 2.35700424389211e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 1.5343577290593764e-09     
+CG iteration 16, residual = 8.753507671784319e-10     
+CG iteration 17, residual = 4.532566416001267e-10     
+CG iteration 18, residual = 1.7855811369205447e-10     
+err =  3.16713884153554e-06
+Newton iteration  5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 3.579545604586945e-06     
+CG iteration 2, residual = 6.179083154078514e-07     
+CG iteration 3, residual = 1.239235584890123e-07     
+CG iteration 4, residual = 2.1433361150772329e-07     
+CG iteration 5, residual = 1.1567390015118064e-07     
+CG iteration 6, residual = 3.0201041522401975e-08     
+CG iteration 7, residual = 2.2197689629800675e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 2.9718917629574708e-08     
+CG iteration 9, residual = 1.6772112769874432e-08     
+CG iteration 10, residual = 7.675066397343125e-09     
+CG iteration 11, residual = 3.067857884421209e-09     
+CG iteration 12, residual = 2.7786819892658004e-09     
+CG iteration 13, residual = 2.8673063600453295e-09     
+CG iteration 14, residual = 2.1684931957891734e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 1.148052439569176e-09     
+CG iteration 16, residual = 3.936707100840952e-10     
+CG iteration 17, residual = 2.3108429876233108e-10     
+err =  3.1860595048472302e-06
+Newton iteration  6
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 3.6832926857152956e-06     
+CG iteration 2, residual = 5.872288373036336e-07     
+CG iteration 3, residual = 1.2519927394429543e-07     
+CG iteration 4, residual = 1.8246934389255138e-07     
+CG iteration 5, residual = 1.3769740387229065e-07     
+CG iteration 6, residual = 3.419038194494117e-08     
+CG iteration 7, residual = 1.9555438054752252e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 2.4370468281159057e-08     
+CG iteration 9, residual = 1.8783859959809014e-08     
+CG iteration 10, residual = 8.92186552342394e-09     
+CG iteration 11, residual = 2.9105921789889766e-09     
+CG iteration 12, residual = 2.6946305764204155e-09     
+CG iteration 13, residual = 2.336594595653388e-09     
+CG iteration 14, residual = 1.8051046887432991e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 1.174515905529117e-09     
+CG iteration 16, residual = 6.253929130228551e-10     
+CG iteration 17, residual = 3.176580678392835e-10     
+err =  3.2347873599419056e-06
+Newton iteration  7
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 3.6369958842885917e-06     
+CG iteration 2, residual = 5.885984291608688e-07     
+CG iteration 3, residual = 1.4248815369082154e-07     
+CG iteration 4, residual = 2.0107580952475024e-07     
+CG iteration 5, residual = 1.4264649904981438e-07     
+CG iteration 6, residual = 3.5639509180324115e-08     
+CG iteration 7, residual = 2.1473699779314424e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 2.8643215959834283e-08     
+CG iteration 9, residual = 2.058689909501793e-08     
+CG iteration 10, residual = 8.909908872972599e-09     
+CG iteration 11, residual = 3.829456446510783e-09     
+CG iteration 12, residual = 2.949350617219423e-09     
+CG iteration 13, residual = 2.7226746629648487e-09     
+CG iteration 14, residual = 2.4825482610325352e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 1.1450212012511866e-09     
+CG iteration 16, residual = 6.353549571845293e-10     
+CG iteration 17, residual = 4.314403202672876e-10     
+CG iteration 18, residual = 2.078798882670108e-10     
+err =  3.252048747066214e-06
+Newton iteration  8
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 3.903781828711769e-06     
+CG iteration 2, residual = 7.861902607024188e-07     
+CG iteration 3, residual = 1.5776777229958902e-07     
+CG iteration 4, residual = 2.927586663627325e-07     
+CG iteration 5, residual = 1.59212340206626e-07     
+CG iteration 6, residual = 3.9354303862133874e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 7, residual = 2.8737281053716343e-08     
+CG iteration 8, residual = 3.896674749778996e-08     
+CG iteration 9, residual = 2.109087977611751e-08     
+CG iteration 10, residual = 9.73735746002437e-09     
+CG iteration 11, residual = 3.644547598638723e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 12, residual = 2.927415455522112e-09     
+CG iteration 13, residual = 2.807863441985598e-09     
+CG iteration 14, residual = 2.340010799106051e-09     
+CG iteration 15, residual = 1.4125118030482392e-09     
+CG iteration 16, residual = 4.969973177397186e-10     
+CG iteration 17, residual = 2.9980346501830614e-10     
+err =  3.454088555603251e-06
+Newton iteration  9
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 4.124394053843368e-06     
+CG iteration 2, residual = 7.834770289840142e-07     
+CG iteration 3, residual = 1.668982628332186e-07     
+CG iteration 4, residual = 2.6730937490719244e-07     
+CG iteration 5, residual = 1.4192867972918827e-07     
+CG iteration 6, residual = 3.935380160104242e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 7, residual = 2.6772188773102555e-08     
+CG iteration 8, residual = 3.552753190223946e-08     
+CG iteration 9, residual = 2.2235640897620318e-08     
+CG iteration 10, residual = 9.324546202570953e-09     
+CG iteration 11, residual = 3.2110142348286996e-09     
+CG iteration 12, residual = 3.3835245237523624e-09     
+CG iteration 13, residual = 2.983466654040942e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 14, residual = 2.120353404260654e-09     
+CG iteration 15, residual = 1.2750626000143619e-09     
+CG iteration 16, residual = 6.575117484485119e-10     
+CG iteration 17, residual = 3.638411279063535e-10     
+err =  3.620910841027187e-06
+Newton iteration  10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 4.223087270383133e-06     
+CG iteration 2, residual = 7.947118889529447e-07     
+CG iteration 3, residual = 1.7007482849479266e-07     
+CG iteration 4, residual = 2.5948185328004586e-07     
+CG iteration 5, residual = 1.660014796981396e-07     
+CG iteration 6, residual = 4.537444705068011e-08     
+CG iteration 7, residual = 2.6747130736642845e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 3.646517237887181e-08     
+CG iteration 9, residual = 2.470733972656861e-08     
+CG iteration 10, residual = 9.859332777249402e-09     
+CG iteration 11, residual = 4.1773771816486766e-09     
+CG iteration 12, residual = 3.0666305284072723e-09     
+CG iteration 13, residual = 3.019200740828451e-09     
+CG iteration 14, residual = 2.858837393398078e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 1.2347238143630358e-09     
+CG iteration 16, residual = 7.173737205837164e-10     
+CG iteration 17, residual = 4.38475835451203e-10     
+CG iteration 18, residual = 2.3103810986061016e-10     
+err =  3.7202799712181847e-06
+Newton iteration  11
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 4.330751418792891e-06     
+CG iteration 2, residual = 7.681047386728386e-07     
+CG iteration 3, residual = 1.6058790984944773e-07     
+CG iteration 4, residual = 2.752928135762457e-07     
+CG iteration 5, residual = 1.7267872241900452e-07     
+CG iteration 6, residual = 4.174845521086237e-08     
+CG iteration 7, residual = 2.5520793527546057e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 3.496337014202811e-08     
+CG iteration 9, residual = 2.2801386522812122e-08     
+CG iteration 10, residual = 1.0940604810382693e-08     
+CG iteration 11, residual = 3.952170726997187e-09     
+CG iteration 12, residual = 3.238853853582701e-09     
+CG iteration 13, residual = 3.278802921977476e-09     
+CG iteration 14, residual = 2.479329901822984e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 1.4690629338573172e-09     
+CG iteration 16, residual = 5.463472848081422e-10     
+CG iteration 17, residual = 2.957343009058138e-10     
+err =  3.844429556079036e-06
+Newton iteration  12
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 1, residual = 4.575233732366205e-06     
+CG iteration 2, residual = 9.135066297462394e-07     
+CG iteration 3, residual = 1.7242372357245937e-07     
+CG iteration 4, residual = 2.922408502214777e-07     
+CG iteration 5, residual = 1.856426544261802e-07     
+CG iteration 6, residual = 4.7028017489850825e-08     
+CG iteration 7, residual = 2.7065466818749036e-08     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 8, residual = 3.469942730607032e-08     
+CG iteration 9, residual = 2.5391413103635578e-08     
+CG iteration 10, residual = 1.1623645199324613e-08     
+CG iteration 11, residual = 3.6950063681547633e-09     
+CG iteration 12, residual = 3.393579863512371e-09     
+CG iteration 13, residual = 3.1315450144793347e-09     
+CG iteration 14, residual = 2.5053881777202653e-09     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CG iteration 15, residual = 1.5300613939735258e-09     
+CG iteration 16, residual = 6.931024609368915e-10     
+CG iteration 17, residual = 3.7509263182751466e-10     
+err =  3.995192226508427e-06
+Newton iteration  13
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">39</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">tau</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="n">uold</span><span class="o">.</span><span class="n">vec</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">components</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">vec</span>
+<span class="ne">---&gt; </span><span class="mi">39</span> <span class="n">newton</span><span class="o">.</span><span class="n">Solve</span><span class="p">(</span><span class="n">maxerr</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span> <span class="n">printing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="n">uprime</span><span class="o">.</span><span class="n">vec</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">tau</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">components</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">vec</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">tau</span> <span class="o">*</span> <span class="n">uold</span><span class="o">.</span><span class="n">vec</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="n">times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="nn">File /Applications/Netgen.app/Contents/Resources/lib/python3.12/site-packages/netgen/__init__.py:56,</span> in <span class="ni">TimeFunction.&lt;locals&gt;.retfunc</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="k">def</span> <span class="nf">retfunc</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="k">with</span> <span class="n">timer</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">56</span>         <span class="n">ret</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span>     <span class="k">return</span> <span class="n">ret</span>
+
+<span class="nn">File /Applications/Netgen.app/Contents/Resources/lib/python3.12/site-packages/ngsolve/nonlinearsolvers.py:34,</span> in <span class="ni">NewtonSolver.Solve</span><span class="nt">(self, maxit, maxerr, dampfactor, printing, callback, linesearch, printenergy, print_wrong_direction)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="k">if</span> <span class="n">printenergy</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energy: &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">Energy</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">vec</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">34</span> <span class="n">a</span><span class="o">.</span><span class="n">AssembleLinearization</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">vec</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">a</span><span class="o">.</span><span class="n">Apply</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">vec</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="bp">self</span><span class="o">.</span><span class="n">_UpdateInverse</span><span class="p">()</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./TEAM-24"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../TEAM-13/solution_of_team13_problem.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>TEAM Problem 13</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Team 24 - Nonlinear Time-Transient Rotational Test Rig</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry">3.1. Geometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesh">3.2. Mesh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-density">3.3. Current Density</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fespace">3.4. FESpace</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#material-parameters">4. Material Parameters</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By many
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1081 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Embedded Inductance Coil &#8212; Compumag TEAM-Problems</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/occGeometries/inductance';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Compumag TEAM-Problems</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Compumag TEAM-problems
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">the first few</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../TEAM-7/team7.html">1. TEAM-7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TEAM-13/solution_of_team13_problem.html">2. TEAM Problem 13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../TEAM-24/team24.html">3. Team 24 - Nonlinear Time-Transient Rotational Test Rig</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/NGSolve/TEAM-problems" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/occGeometries/inductance.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Embedded Inductance Coil</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Embedded Inductance Coil</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-the-induction-coil-into-a-box-of-air-for-simulations">Embedding the Induction Coil into a box of air for simulations.</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="embedded-inductance-coil">
+<h1>Embedded Inductance Coil<a class="headerlink" href="#embedded-inductance-coil" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">netgen.occ</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ngsolve.webgui</span> <span class="kn">import</span> <span class="n">Draw</span>
+<span class="kn">from</span> <span class="nn">netgen.webgui</span> <span class="kn">import</span> <span class="n">Draw</span> <span class="k">as</span> <span class="n">DrawGeo</span>
+<span class="kn">from</span> <span class="nn">ngsolve</span> <span class="kn">import</span> <span class="n">Mesh</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Load the inductance coil with the connectors and the core from the external step file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo</span> <span class="o">=</span> <span class="n">OCCGeometry</span><span class="p">(</span><span class="s2">&quot;Induktivitaet.step&quot;</span><span class="p">)</span>
+<span class="n">shape</span> <span class="o">=</span> <span class="n">geo</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">DrawGeo</span><span class="p">(</span><span class="n">shape</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "79ea3f11578b4336a5b4b698ea771af4", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<p>Generating a mesh from the imported geometrie failes, due to overlapping boundaries. The connectors and the coil should share a common boundary where they are connected, but they have individual unconnected surfaces!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">GenerateMesh</span><span class="p">(</span><span class="n">maxh</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NgException</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">6021764</span><span class="n">d37f6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mesh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">GenerateMesh</span><span class="p">(</span><span class="n">maxh</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="ne">NgException</span>: Stop meshing since boundary mesh is overlapping
+</pre></div>
+</div>
+</div>
+</div>
+<p>The parts need to be connected and the surfaces unified. This is done by the “Glue” command. It finds duplicated surfaces and repairs them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newshape</span> <span class="o">=</span> <span class="n">Glue</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">newgeo</span> <span class="o">=</span> <span class="n">OCCGeometry</span><span class="p">(</span><span class="n">newshape</span><span class="p">)</span>
+<span class="n">newmesh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">newgeo</span><span class="o">.</span><span class="n">GenerateMesh</span><span class="p">(</span><span class="n">maxh</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">Draw</span> <span class="p">(</span><span class="n">newmesh</span><span class="p">);</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Materials:&quot;</span><span class="p">,</span> <span class="n">newmesh</span><span class="o">.</span><span class="n">GetMaterials</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4982cca36c7446b8a2301af35c1b06c7", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Materials: (&#39;Kern&#39;, &#39;Spule&#39;, &#39;Ableitung&#39;, &#39;Zuleitung_2&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="embedding-the-induction-coil-into-a-box-of-air-for-simulations">
+<h1>Embedding the Induction Coil into a box of air for simulations.<a class="headerlink" href="#embedding-the-induction-coil-into-a-box-of-air-for-simulations" title="Link to this heading">#</a></h1>
+<p>In FEM simulations the air around the coil needs to be considered. We take the geometrie from the step file and embed it into a box of air.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">air</span> <span class="o">=</span> <span class="n">box</span><span class="o">-</span><span class="n">newshape</span>
+<span class="n">air</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="s2">&quot;air&quot;</span><span class="p">)</span>
+<span class="n">embshape</span> <span class="o">=</span> <span class="n">Glue</span><span class="p">([</span><span class="n">air</span><span class="p">,</span><span class="n">newshape</span><span class="p">])</span>
+<span class="n">DrawGeo</span><span class="p">(</span><span class="n">embshape</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0aa7e7ec8eb446cbb57145554213f0cb", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">embgeo</span> <span class="o">=</span> <span class="n">OCCGeometry</span><span class="p">(</span><span class="n">embshape</span><span class="p">)</span>
+<span class="n">embmesh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">embgeo</span><span class="o">.</span><span class="n">GenerateMesh</span><span class="p">(</span><span class="n">maxh</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">Draw</span> <span class="p">(</span><span class="n">embmesh</span><span class="p">);</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">embmesh</span><span class="o">.</span><span class="n">GetMaterials</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b8835528f96d4dd9b69697ea82d5dcd8", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;air&#39;, &#39;Kern&#39;, &#39;Spule&#39;, &#39;Ableitung&#39;, &#39;Zuleitung_2&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">embmesh</span><span class="o">.</span><span class="n">GetMaterials</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;air&#39;, &#39;Kern&#39;, &#39;Spule&#39;, &#39;Ableitung&#39;, &#39;Zuleitung_2&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">embmesh</span><span class="o">.</span><span class="n">GetBoundaries</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;bc_0&#39;,
+ &#39;bc_1&#39;,
+ &#39;bc_2&#39;,
+ &#39;bc_3&#39;,
+ &#39;bc_4&#39;,
+ &#39;bc_5&#39;,
+ &#39;bc_6&#39;,
+ &#39;bc_7&#39;,
+ &#39;bc_8&#39;,
+ &#39;bc_9&#39;,
+ &#39;&#39;,
+ &#39;bc_11&#39;,
+ &#39;bc_12&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;bc_24&#39;,
+ &#39;bc_25&#39;,
+ &#39;bc_26&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;bc_38&#39;,
+ &#39;bc_39&#39;,
+ &#39;bc_40&#39;,
+ &#39;bc_41&#39;,
+ &#39;&#39;,
+ &#39;bc_43&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;,
+ &#39;&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ngsolve</span> <span class="kn">import</span> <span class="n">HCurl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">HCurl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on class HCurl in module ngsolve.comp:
+
+class HCurl(FESpace)
+ |   Keyword arguments can be:
+ |  order: int = 1
+ |    order of finite element space
+ |  complex: bool = False
+ |    Set if FESpace should be complex
+ |  dirichlet: regexpr
+ |    Regular expression string defining the dirichlet boundary.
+ |    More than one boundary can be combined by the | operator,
+ |    i.e.: dirichlet = &#39;top|right&#39;
+ |  dirichlet_bbnd: regexpr
+ |    Regular expression string defining the dirichlet bboundary,
+ |    i.e. points in 2D and edges in 3D.
+ |    More than one boundary can be combined by the | operator,
+ |    i.e.: dirichlet_bbnd = &#39;top|right&#39;
+ |  dirichlet_bbbnd: regexpr
+ |    Regular expression string defining the dirichlet bbboundary,
+ |    i.e. points in 3D.
+ |    More than one boundary can be combined by the | operator,
+ |    i.e.: dirichlet_bbbnd = &#39;top|right&#39;
+ |  definedon: Region or regexpr
+ |    FESpace is only defined on specific Region, created with mesh.Materials(&#39;regexpr&#39;)
+ |    or mesh.Boundaries(&#39;regexpr&#39;). If given a regexpr, the region is assumed to be
+ |    mesh.Materials(&#39;regexpr&#39;).
+ |  dim: int = 1
+ |    Create multi dimensional FESpace (i.e. [H1]^3)
+ |  dgjumps: bool = False
+ |    Enable discontinuous space for DG methods, this flag is needed for DG methods,
+ |    since the dofs have a different coupling then and this changes the sparsity
+ |    pattern of matrices.
+ |  low_order_space: bool = True
+ |    Generate a lowest order space together with the high-order space,
+ |    needed for some preconditioners.
+ |  order_policy: ORDER_POLICY = ORDER_POLICY.OLDSTYLE
+ |    CONSTANT .. use the same fixed order for all elements,
+ |    NODAL ..... use the same order for nodes of same shape,
+ |    VARIABLE ... use an individual order for each edge, face and cell,
+ |    OLDSTYLE .. as it used to be for the last decade
+ |  nograds: bool = False
+ |    Remove higher order gradients of H1 basis functions from HCurl FESpace
+ |  type1: bool = False
+ |    Use type 1 Nedelec elements
+ |  discontinuous: bool = False
+ |    Create discontinuous HCurl space
+ |  gradientdomains: List[int] = None
+ |    Remove high order gradients from domains where the value is 0.
+ |    This list can be generated for example like this:
+ |    graddoms = [1 if mat == &#39;iron&#39; else 0 for mat in mesh.GetMaterials()]
+ |  highest_order_dc: bool = False
+ |    Activates relaxed H(curl)-conformity. Allows tangential discontinuity of highest order edge basis functions
+ |  
+ |  Method resolution order:
+ |      HCurl
+ |      FESpace
+ |      NGS_Object
+ |      pybind11_builtins.pybind11_object
+ |      builtins.object
+ |  
+ |  Methods defined here:
+ |  
+ |  CreateGradient(...)
+ |      CreateGradient(self: ngsolve.comp.HCurl) -&gt; tuple
+ |  
+ |  __getstate__(...)
+ |      __getstate__(self: ngsolve.comp.FESpace) -&gt; tuple
+ |  
+ |  __init__(...)
+ |      __init__(self: ngsolve.comp.HCurl, mesh: ngsolve.comp.Mesh, autoupdate: bool = False, **kwargs) -&gt; None
+ |  
+ |  __setstate__(...)
+ |      __setstate__(self: ngsolve.comp.HCurl, arg0: tuple) -&gt; None
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __flags_doc__(...) from builtins.PyCapsule
+ |      __flags_doc__() -&gt; dict
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from FESpace:
+ |  
+ |  ApplyM(...)
+ |      ApplyM(self: ngsolve.comp.FESpace, vec: ngsolve.la.BaseVector, rho: ngsolve.fem.CoefficientFunction = None, definedon: ngsolve.comp.Region = None) -&gt; None
+ |      
+ |      Apply mass-matrix. Available only for L2-like spaces
+ |  
+ |  ConvertL2Operator(...)
+ |      ConvertL2Operator(self: ngsolve.comp.FESpace, l2space: ngsolve.comp.FESpace) -&gt; BaseMatrix
+ |  
+ |  CouplingType(...)
+ |      CouplingType(self: ngsolve.comp.FESpace, dofnr: int) -&gt; ngsolve.comp.COUPLING_TYPE
+ |      
+ |      
+ |               Get coupling type of a degree of freedom.
+ |      
+ |      Parameters:
+ |      
+ |      dofnr : int
+ |        input dof number
+ |  
+ |  CreateDirectSolverCluster(...)
+ |      CreateDirectSolverCluster(self: ngsolve.comp.FESpace, **kwargs) -&gt; list
+ |  
+ |  Elements(...)
+ |      Elements(self: ngsolve.comp.FESpace, VOL_or_BND: ngsolve.comp.VorB = &lt;VorB.VOL: 0&gt;) -&gt; ngsolve.comp.FESpaceElementRange
+ |      
+ |      
+ |      Returns an iterable range of elements.
+ |      
+ |      Parameters:
+ |      
+ |      VOL_or_BND : ngsolve.comp.VorB
+ |        input VOL, BND, BBND,...
+ |  
+ |  FinalizeUpdate(...)
+ |      FinalizeUpdate(self: ngsolve.comp.FESpace) -&gt; None
+ |      
+ |      finalize update
+ |  
+ |  FreeDofs(...)
+ |      FreeDofs(self: ngsolve.comp.FESpace, coupling: bool = False) -&gt; pyngcore.BitArray
+ |      
+ |      
+ |      
+ |      Return BitArray of free (non-Dirichlet) dofs\n
+ |      coupling=False ... all free dofs including local dofs\n
+ |      coupling=True .... only element-boundary free dofs
+ |      
+ |      Parameters:
+ |      
+ |      coupling : bool
+ |        input coupling
+ |  
+ |  GetDofNrs(...)
+ |      GetDofNrs(*args, **kwargs)
+ |      Overloaded function.
+ |      
+ |      1. GetDofNrs(self: ngsolve.comp.FESpace, ei: ngsolve.comp.ElementId) -&gt; tuple
+ |      
+ |      
+ |      
+ |      Parameters:
+ |      
+ |      ei : ngsolve.comp.ElementId
+ |        input element id
+ |      
+ |      
+ |      
+ |      2. GetDofNrs(self: ngsolve.comp.FESpace, ni: ngsolve.comp.NodeId) -&gt; tuple
+ |      
+ |      
+ |      
+ |      Parameters:
+ |      
+ |      ni : ngsolve.comp.NodeId
+ |        input node id
+ |  
+ |  GetDofs(...)
+ |      GetDofs(self: ngsolve.comp.FESpace, region: ngsolve.comp.Region) -&gt; pyngcore.BitArray
+ |      
+ |      
+ |      Returns all degrees of freedom in given region.
+ |      
+ |      Parameters:
+ |      
+ |      region : ngsolve.comp.Region
+ |        input region
+ |  
+ |  GetFE(...)
+ |      GetFE(self: ngsolve.comp.FESpace, ei: ngsolve.comp.ElementId) -&gt; object
+ |      
+ |      
+ |      Get the finite element to corresponding element id.
+ |      
+ |      Parameters:
+ |      
+ |      ei : ngsolve.comp.ElementId
+ |         input element id
+ |  
+ |  GetOrder(...)
+ |      GetOrder(self: ngsolve.comp.FESpace, nodeid: ngsolve.comp.NodeId) -&gt; int
+ |      
+ |      return order of node.
+ |      by now, only isotropic order is supported here
+ |  
+ |  GetTrace(...)
+ |      GetTrace(self: ngsolve.comp.FESpace, arg0: ngsolve.comp.FESpace, arg1: ngsolve.la.BaseVector, arg2: ngsolve.la.BaseVector, arg3: bool) -&gt; None
+ |  
+ |  GetTraceTrans(...)
+ |      GetTraceTrans(self: ngsolve.comp.FESpace, arg0: ngsolve.comp.FESpace, arg1: ngsolve.la.BaseVector, arg2: ngsolve.la.BaseVector, arg3: bool) -&gt; None
+ |  
+ |  HideAllDofs(...)
+ |      HideAllDofs(self: ngsolve.comp.FESpace, component: object = &lt;ngsolve.ngstd.DummyArgument&gt;) -&gt; None
+ |      
+ |      set all visible coupling types to HIDDEN_DOFs (will be overwritten by any Update())
+ |  
+ |  InvM(...)
+ |      InvM(self: ngsolve.comp.FESpace, rho: ngsolve.fem.CoefficientFunction = None) -&gt; BaseMatrix
+ |  
+ |  Mass(...)
+ |      Mass(self: ngsolve.comp.FESpace, rho: ngsolve.fem.CoefficientFunction = None, definedon: Optional[ngsolve.comp.Region] = None) -&gt; BaseMatrix
+ |  
+ |  ParallelDofs(...)
+ |      ParallelDofs(self: ngsolve.comp.FESpace) -&gt; ngsolve.la.ParallelDofs
+ |      
+ |      Return dof-identification for MPI-distributed meshes
+ |  
+ |  Prolongation(...)
+ |      Prolongation(self: ngsolve.comp.FESpace) -&gt; ngmg::Prolongation
+ |      
+ |      Return prolongation operator for use in multi-grid
+ |  
+ |  Range(...)
+ |      Range(self: ngsolve.comp.FESpace, arg0: int) -&gt; ngsolve.la.DofRange
+ |      
+ |      deprecated, will be only available for ProductSpace
+ |  
+ |  SetCouplingType(...)
+ |      SetCouplingType(*args, **kwargs)
+ |      Overloaded function.
+ |      
+ |      1. SetCouplingType(self: ngsolve.comp.FESpace, dofnr: int, coupling_type: ngsolve.comp.COUPLING_TYPE) -&gt; None
+ |      
+ |      
+ |               Set coupling type of a degree of freedom.
+ |      
+ |      Parameters:
+ |      
+ |      dofnr : int
+ |        input dof number
+ |      
+ |      coupling_type : ngsolve.comp.COUPLING_TYPE
+ |        input coupling type
+ |      
+ |      
+ |      
+ |      2. SetCouplingType(self: ngsolve.comp.FESpace, dofnrs: ngsolve.ngstd.IntRange, coupling_type: ngsolve.comp.COUPLING_TYPE) -&gt; None
+ |      
+ |      
+ |               Set coupling type for interval of dofs.
+ |      
+ |      Parameters:
+ |      
+ |      dofnrs : Range
+ |        range of dofs
+ |      
+ |      coupling_type : ngsolve.comp.COUPLING_TYPE
+ |        input coupling type
+ |  
+ |  SetDefinedOn(...)
+ |      SetDefinedOn(self: ngsolve.comp.FESpace, region: ngsolve.comp.Region) -&gt; None
+ |      
+ |      
+ |      Set the regions on which the FESpace is defined.
+ |      
+ |      Parameters:
+ |      
+ |      region : ngsolve.comp.Region
+ |        input region
+ |  
+ |  SetOrder(...)
+ |      SetOrder(*args, **kwargs)
+ |      Overloaded function.
+ |      
+ |      1. SetOrder(self: ngsolve.comp.FESpace, element_type: ngsolve.fem.ET, order: int) -&gt; None
+ |      
+ |      
+ |      
+ |      Parameters:
+ |      
+ |      element_type : ngsolve.fem.ET
+ |        input element type
+ |      
+ |      order : object
+ |        input polynomial order
+ |      
+ |      
+ |      2. SetOrder(self: ngsolve.comp.FESpace, nodeid: ngsolve.comp.NodeId, order: int) -&gt; None
+ |      
+ |      
+ |      
+ |      Parameters:
+ |      
+ |      nodeid : ngsolve.comp.NodeId
+ |        input node id
+ |      
+ |      order : int
+ |        input polynomial order
+ |  
+ |  SolveM(...)
+ |      SolveM(self: ngsolve.comp.FESpace, vec: ngsolve.la.BaseVector, rho: ngsolve.fem.CoefficientFunction = None, definedon: ngsolve.comp.Region = None) -&gt; None
+ |      
+ |      
+ |               Solve with the mass-matrix. Available only for L2-like spaces.
+ |      
+ |      Parameters:
+ |      
+ |      vec : ngsolve.la.BaseVector
+ |        input right hand side vector
+ |      
+ |      rho : ngsolve.fem.CoefficientFunction
+ |        input CF
+ |  
+ |  TestFunction(...)
+ |      TestFunction(self: ngsolve.comp.FESpace) -&gt; object
+ |      
+ |      Return a proxy to be used as a testfunction for Symbolic Integrators
+ |  
+ |  TnT(...)
+ |      TnT(self: ngsolve.comp.FESpace) -&gt; Tuple[object, object]
+ |      
+ |      Return a tuple of trial and testfunction
+ |  
+ |  TraceOperator(...)
+ |      TraceOperator(self: ngsolve.comp.FESpace, tracespace: ngsolve.comp.FESpace, average: bool) -&gt; BaseMatrix
+ |  
+ |  TrialFunction(...)
+ |      TrialFunction(self: ngsolve.comp.FESpace) -&gt; object
+ |      
+ |      Return a proxy to be used as a trialfunction in Symbolic Integrators
+ |  
+ |  Update(...)
+ |      Update(self: ngsolve.comp.FESpace) -&gt; None
+ |      
+ |      update space after mesh-refinement
+ |  
+ |  UpdateDofTables(...)
+ |      UpdateDofTables(self: ngsolve.comp.FESpace) -&gt; None
+ |      
+ |      update dof-tables after changing polynomial order distribution
+ |  
+ |  __eq__(...)
+ |      __eq__(self: ngsolve.comp.FESpace, space: ngsolve.comp.FESpace) -&gt; bool
+ |  
+ |  __mul__(...)
+ |      __mul__(self: ngsolve.comp.FESpace, arg0: ngsolve.comp.FESpace) -&gt; ngcomp::CompoundFESpace
+ |  
+ |  __pow__(...)
+ |      __pow__(self: ngsolve.comp.FESpace, arg0: int) -&gt; ngcomp::CompoundFESpaceAllSame
+ |  
+ |  __str__(...)
+ |      __str__(self: ngsolve.comp.FESpace) -&gt; str
+ |  
+ |  __timing__(...)
+ |      __timing__(self: ngsolve.comp.FESpace) -&gt; object
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods inherited from FESpace:
+ |  
+ |  __special_treated_flags__(...) from builtins.PyCapsule
+ |      __special_treated_flags__() -&gt; dict
+ |  
+ |  ----------------------------------------------------------------------
+ |  Readonly properties inherited from FESpace:
+ |  
+ |  components
+ |      deprecated, will be only available for ProductSpace
+ |  
+ |  couplingtype
+ |  
+ |  dim
+ |      multi-dim of FESpace
+ |  
+ |  globalorder
+ |      query global order of space
+ |  
+ |  is_complex
+ |  
+ |  loembedding
+ |  
+ |  lospace
+ |  
+ |  mesh
+ |      mesh on which the FESpace is created
+ |  
+ |  ndof
+ |      number of degrees of freedom
+ |  
+ |  ndofglobal
+ |      global number of dofs on MPI-distributed mesh
+ |  
+ |  type
+ |      type of finite element space
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes inherited from FESpace:
+ |  
+ |  __hash__ = None
+ |  
+ |  ----------------------------------------------------------------------
+ |  Readonly properties inherited from NGS_Object:
+ |  
+ |  __memory__
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from NGS_Object:
+ |  
+ |  name
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods inherited from pybind11_builtins.pybind11_object:
+ |  
+ |  __new__(*args, **kwargs) from pybind11_builtins.pybind11_type
+ |      Create and return a new object.  See help(type) for accurate signature.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fes</span> <span class="o">=</span> <span class="n">HCurl</span><span class="p">(</span><span class="n">embmesh</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fes</span><span class="o">.</span><span class="n">ndof</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47414
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">netgen.gui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src/occGeometries"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Embedded Inductance Coil</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-the-induction-coil-into-a-box-of-air-for-simulations">Embedding the Induction Coil into a box of air for simulations.</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By many
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
