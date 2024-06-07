@@ -8,6 +8,7 @@ parts:
     numbered: True
     chapters:
     - file: TEAM-7/team7.ipynb
+      title: TEAM-7
     - file: TEAM-13/solution_of_team13_problem.ipynb
     - file: TEAM-24/team24.ipynb
 
